@@ -13,7 +13,7 @@
         <select name="tipo" id="tipo">
             <option value="">Aleatório</option>
             {% for tipo in tipos %}
-                <option value="{{ tipo }}">{{ tipo }}</option>
+                <option value="{{ tipo }}" {% if tipo == request.form.tipo %}selected{% endif %}>{{ tipo }}</option>
             {% endfor %}
         </select><br>
 
@@ -21,7 +21,7 @@
         <select name="level" id="level">
             <option value="">Aleatório</option>
             {% for level in levels %}
-                <option value="{{ level }}">{{ level }}</option>
+                <option value="{{ level }}" {% if level == request.form.level %}selected{% endif %}>{{ level }}</option>
             {% endfor %}
         </select><br>
 
@@ -29,7 +29,7 @@
         <select name="classe" id="classe">
             <option value="">Aleatório</option>
             {% for classe in classes %}
-                <option value="{{ classe }}">{{ classe }}</option>
+                <option value="{{ classe }}" {% if classe == request.form.classe %}selected{% endif %}>{{ classe }}</option>
             {% endfor %}
         </select><br>
 
@@ -37,7 +37,7 @@
         <select name="atividade" id="atividade">
             <option value="">Aleatório</option>
             {% for atividade in atividades %}
-                <option value="{{ atividade }}">{{ atividade }}</option>
+                <option value="{{ atividade }}" {% if atividade == request.form.atividade %}selected{% endif %}>{{ atividade }}</option>
             {% endfor %}
         </select><br>
 

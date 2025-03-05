@@ -4,7 +4,8 @@ from random import randint
 app = Flask(__name__, static_folder='static')
 
 tipos = ['Aquaris','Feralis','Nanktuk','Plumavel','Reptilha','Vegetuz']
-levels = ['Básico','Básico', 'Básico', 'Básico', 'Básico', 'Básico', 'Avançado', 'Avançado', 'Avançado', 'Superior']
+levels_rand = ['Básico','Básico', 'Básico', 'Básico', 'Básico', 'Básico', 'Avançado', 'Avançado', 'Avançado', 'Superior']
+levels = ['Básico', 'Avançado', 'Superior']
 classes = ['Bruiser', 'Combo', 'Control', 'Nuker', 'Tank']
 atividades = ['Diurna', 'Noturna', 'Indefinida']
 dados = {
@@ -125,7 +126,7 @@ class CriaCriatura:
     
     @property
     def define_level(self):
-        return levels[randint(0, len(levels) - 1)]
+        return levels_rand[randint(0, len(levels_rand) - 1)]
     
     @property
     def define_classe(self):
