@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Criaturas RPG</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Gerador de Criaturas</h1>
+    <form method="POST">
+        <label for="tipo">Tipo:</label>
+        <select name="tipo" id="tipo">
+            <option value="">Aleatório</option>
+            {% for tipo in tipos %}
+                <option value="{{ tipo }}">{{ tipo }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label for="level">Level:</label>
+        <select name="level" id="level">
+            <option value="">Aleatório</option>
+            {% for level in levels %}
+                <option value="{{ level }}">{{ level }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label for="classe">Classe:</label>
+        <select name="classe" id="classe">
+            <option value="">Aleatório</option>
+            {% for classe in classes %}
+                <option value="{{ classe }}">{{ classe }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label for="atividade">Atividade:</label>
+        <select name="atividade" id="atividade">
+            <option value="">Aleatório</option>
+            {% for atividade in atividades %}
+                <option value="{{ atividade }}">{{ atividade }}</option>
+            {% endfor %}
+        </select><br>
+
+        <button type="submit">Gerar Criatura</button>
+    </form>
+
+    {% if criatura %}
+        <h2>Criatura Gerada:</h2>
+        <pre>{{ criatura }}</pre>
+    {% endif %}
+</body>
+</html>
